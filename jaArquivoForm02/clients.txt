@@ -1,0 +1,11 @@
+50 Ze Mane 48.78
+150 Carlos Jose 54.89
+25 aless gont 25.98
+2 alesso gont 25.98
+ 1 carlos manoel 234.52
+ 23 carla cristina 2.2
+ 34 teste outro 23.52
+ 1 teste02 outroteste 223.52
+27 blabla manoel 2.0
+3 joao maria 235.5
+3 teste outro 7.0
