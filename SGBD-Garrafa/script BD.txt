@@ -1,0 +1,34 @@
+CREATE DATABASE books OWNER postgres;
+
+CREATE TABLE authors ("authorsID" int NOT NULL PRIMARY KEY, "firstName" varchar(15), "lastName" varchar(15));
+
+CREATE TABLE publishers ("pubID" int NOT NULL PRIMARY KEY, "pubName" varchar(20));
+
+CREATE TABLE titles ("isbn" int NOT NULL PRIMARY KEY, "title" varchar(30), "edNumber" int, "copyright" int, "pubID" int FOREIGN KEY ("pubID") REFERENCES publishers ("pubID"),
+		"image" varchar(30), "price" double);
+
+CREATE TABLE authorisbn ("authorID" int NOT NULL FOREIGN KEY ("authorID") REFERENCES authors("authorsID") , "isbn" int NOT NULL FOREIGN KEY ("isbn") REFERENCES titles("isbn"));
+
+
+SELECT * FROM authors;
+
+SELECT * FROM publishers;
+
+SELECT * FROM titles;
+
+SELECT * FROM authorisbn;
+
+
+INSERT INTO authors ("authorsID", "firstName", "lastName") VALUES (1, 'nome', 'sobrenome');
+
+INSERT INTO publishers ("pubID", "pubName") VALUES (1, 'pubName');
+
+INSERT INTO titles ("isbn", "title", "edNumber", "copyright", "pubID","image", "price") VALUES (1, 'titulo', 2, 2000, 1, 'imagem.jpg', 50.60);
+
+INSERT INTO authorisbn ("authorID", "isbn") VALUES (1, 1);
+
+
+DELETE FROM authors;
+DELETE FROM publishers;
+DELETE FROM titles;
+DELETE FROM authorisbn;
